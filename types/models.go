@@ -1,6 +1,7 @@
 package types
 
 import (
+	"log"
 	"math"
 	"time"
 
@@ -14,7 +15,7 @@ const (
 	SELL   = "sell"
 	MARKET = "market"
 	LIMIT  = "limit"
-	STOP = "stop"
+	STOP   = "stop"
 )
 
 type FtxTime struct {
@@ -28,6 +29,7 @@ func (p *FtxTime) UnmarshalJSON(data []byte) error {
 	}
 
 	sec, nsec := math.Modf(f)
+	log.Printf("Raw ts %f", f)
 	p.Time = time.Unix(int64(sec), int64(nsec))
 	return nil
 }
