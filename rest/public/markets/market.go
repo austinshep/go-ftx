@@ -42,6 +42,7 @@ type Market struct {
 	PostOnly              bool `json:"postOnly"`
 	Restricted            bool `json:"restricted"`
 	HighLeverageFeeExempt bool `json:"highLeverageFeeExempt"`
+	IsEtf                 bool `json:"isEtfMarket"`
 }
 
 func (req *RequestForMarkets) Path() string {

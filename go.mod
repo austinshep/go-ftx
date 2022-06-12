@@ -1,4 +1,4 @@
-module github.com/austinshep/go-ftx
+module github.com/go-numb/go-ftx
 
 go 1.14
 
