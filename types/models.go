@@ -1,7 +1,6 @@
 package types
 
 import (
-	"log"
 	"math"
 	"time"
 
@@ -29,7 +28,6 @@ func (p *FtxTime) UnmarshalJSON(data []byte) error {
 	}
 
 	sec, nsec := math.Modf(f)
-	log.Printf("Raw ts %f", f)
-	p.Time = time.Unix(int64(sec), int64(nsec))
+	p.Time = time.Unix(int64(sec), int64(nsec*1000*1000*1000))
 	return nil
 }
